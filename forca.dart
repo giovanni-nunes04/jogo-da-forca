@@ -46,7 +46,6 @@ void main() {
       continue;
     }
 
-    // Chute da palavra inteira
     if (entrada.length > 1) {
       if (!RegExp(r'^[a-zA-ZÀ-ÿ]+$').hasMatch(entrada)) {
         print('Digite apenas letras.');
@@ -64,13 +63,11 @@ void main() {
       }
     }
 
-    // Validação: apenas uma letra
     if (!RegExp(r'^[a-zA-ZÀ-ÿ]$').hasMatch(entrada)) {
       print('Digite apenas uma letra válida.');
       continue;
     }
 
-    // Não desconta vida se repetir tentativa
     if (letrasTentadas.contains(entrada)) {
       print('Você já tentou a letra "$entrada".');
       continue;
@@ -87,10 +84,8 @@ void main() {
       print('A letra "$entrada" não existe na palavra.');
     }
 
-    // Verifica vitória
     venceu = verificarVitoria(palavraSecreta, letrasCorretas);
 
-    // Verifica derrota
     if (vidas <= 0) {
       perdeu = true;
     }
